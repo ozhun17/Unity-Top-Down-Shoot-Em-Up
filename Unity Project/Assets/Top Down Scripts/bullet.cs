@@ -9,6 +9,7 @@ public class bullet : MonoBehaviour, IPooledObject
     private float BulletDamage = 10f;
     private int Piercing = 1;
     private Player _player;
+    public LayerMask GroundLayer;
     // Start is called before the first frame update
     private void Start()
     {
@@ -35,8 +36,9 @@ public class bullet : MonoBehaviour, IPooledObject
             {
                 this.gameObject.SetActive(false);
             }
+            return;
         }
-        else
+        if(collision.gameObject.layer == GroundLayer)
         {
             this.gameObject.SetActive(false);
         }

@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 279298854}
   - component: {fileID: 279298855}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -433,7 +433,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7780488, y: 1}
+    m_SensorSize: {x: 1.7784091, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -860,7 +860,7 @@ GameObject:
   - component: {fileID: 1724720811}
   - component: {fileID: 1724720814}
   - component: {fileID: 1724720816}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Egg White
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1050,7 +1050,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1825714207}
   - component: {fileID: 1825714208}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1145,38 +1145,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1006461047275975407, guid: cdfab6050d5f420428a6cef817329cc4, type: 3}
-      propertyPath: pools.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1006461047275975407, guid: cdfab6050d5f420428a6cef817329cc4, type: 3}
-      propertyPath: pools.Array.data[1].tag
-      value: enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 1006461047275975407, guid: cdfab6050d5f420428a6cef817329cc4, type: 3}
-      propertyPath: pools.Array.data[2].tag
-      value: damagetext
-      objectReference: {fileID: 0}
-    - target: {fileID: 1006461047275975407, guid: cdfab6050d5f420428a6cef817329cc4, type: 3}
-      propertyPath: pools.Array.data[0].size
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1006461047275975407, guid: cdfab6050d5f420428a6cef817329cc4, type: 3}
-      propertyPath: pools.Array.data[1].size
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1006461047275975407, guid: cdfab6050d5f420428a6cef817329cc4, type: 3}
-      propertyPath: pools.Array.data[2].size
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1006461047275975407, guid: cdfab6050d5f420428a6cef817329cc4, type: 3}
-      propertyPath: pools.Array.data[1].prefab
-      value: 
-      objectReference: {fileID: 7744894546961169610, guid: 6a9cc796b4efd794b8a4fde0f96938fa, type: 3}
-    - target: {fileID: 1006461047275975407, guid: cdfab6050d5f420428a6cef817329cc4, type: 3}
-      propertyPath: pools.Array.data[2].prefab
-      value: 
-      objectReference: {fileID: 4558765345994770846, guid: 8c7560f2acd5fc34c8cef444c2fb98de, type: 3}
     - target: {fileID: 3666054317296325393, guid: cdfab6050d5f420428a6cef817329cc4, type: 3}
       propertyPath: m_RootOrder
       value: 7

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3703891720580443097
+--- !u!1 &1455115201547092368
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3666054317296325393}
-  - component: {fileID: 1006461047275975407}
+  - component: {fileID: 1455115201547092374}
+  - component: {fileID: 1455115201547092375}
   m_Layer: 0
-  m_Name: ObjectPooler
+  m_Name: PlayerManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3666054317296325393
+--- !u!4 &1455115201547092374
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3703891720580443097}
+  m_GameObject: {fileID: 1455115201547092368}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.93868417, y: 1.6481608, z: -60.248962}
+  m_LocalPosition: {x: -0.74879616, y: 0.04343581, z: -2.9486024}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1006461047275975407
+--- !u!114 &1455115201547092375
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3703891720580443097}
+  m_GameObject: {fileID: 1455115201547092368}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ca47621589b9ba469f700c3fdf3165c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b4413af011db214b8db6a6b9ce4be8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pools:
-  - tag: bullet
-    prefab: {fileID: 515805160965939740, guid: 9676bca3d639d454781bb6b7bea768c3, type: 3}
-    size: 10
-  - tag: enemy
-    prefab: {fileID: 7744894546961169610, guid: 6a9cc796b4efd794b8a4fde0f96938fa, type: 3}
-    size: 10
-  - tag: damagetext
-    prefab: {fileID: 4558765345994770846, guid: 8c7560f2acd5fc34c8cef444c2fb98de, type: 3}
-    size: 10
+  Players:
+  - id: 0
+    PlayerGameObject: {fileID: 0}
+    Tag: Host

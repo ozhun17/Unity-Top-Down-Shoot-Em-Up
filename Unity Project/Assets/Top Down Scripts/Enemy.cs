@@ -8,13 +8,17 @@ public class Enemy : MonoBehaviour, IPooledObject
     public float MaxHealth = 100f;
     public float CurrentHealth;
     public float MoveSpeed = 2f;
-    private Transform PlayerTransform;
+    public Transform PlayerTransform;
     private Transform _transform;
     private Vector2 Direction;
     private Rigidbody2D _rigidbody;
     private Player _player;
     public GameObject damageTextPrefab;
     public int TextDestroyTime = 1;
+    private Vector2 randomPoint;
+    public LayerMask playerLayer;
+    private Vector2 skip;
+    public int skipRadius = 8;
 
     private void Start()
     {
@@ -56,11 +60,34 @@ public class Enemy : MonoBehaviour, IPooledObject
     
     public void OnObjectSpawn(int Variable)
     {
-        _rigidbody = GetComponent<Rigidbody2D>();
+        _rigidbody = GetComponent<Rigidbody2D>();        
         _player = PlayerManager.Instance.Players[Variable].PlayerGameObject.GetComponent<Player>();
         PlayerTransform = _player.GetComponent<Transform>();
         _transform = GetComponent<Transform>();
         CurrentHealth = MaxHealth;
-        _transform.position = new Vector2(PlayerTransform.position.x+5, PlayerTransform.position.y+5);
+        randomPoint = Random.insideUnitCircle.normalized;
+        if (randomPoint == Vector2.zero) { randomPoint = Vector2.one; };
+        randomPoint *= skipRadius;
+        skip = randomPoint;
+        randomPoint = new Vector2(randomPoint.x + PlayerTransform.position.x, randomPoint.y + PlayerTransform.position.y);
+        int checker = CheckForPlayers(randomPoint);
+        while(checker == 1)
+        {
+            randomPoint += skip;
+            checker = CheckForPlayers(randomPoint);
+        }
+        _transform.position = randomPoint;
     }
+
+
+    private int CheckForPlayers(Vector2 Point)
+    {
+        Collider2D hit = Physics2D.OverlapCircle(Point, skipRadius, playerLayer);
+        if(hit != null)
+        {
+            return 1;
+        }
+        return 0;
+    }
+
 }
