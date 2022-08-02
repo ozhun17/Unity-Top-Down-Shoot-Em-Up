@@ -4,11 +4,11 @@
 
 -  Mehmet Utku Ozhun (Developer)
 
-##Product Name
+## Product Name
 
 Not chosen yet.
 
-##Product Explanation
+## Product Explanation
 
 A vampire survivors like shoot'em up game with various gun mechanics and Co-Op Gameplay.
 
