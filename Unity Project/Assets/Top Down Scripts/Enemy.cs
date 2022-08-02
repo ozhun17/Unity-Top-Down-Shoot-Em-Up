@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour, IPooledObject
     private Vector2 Direction;
     private Rigidbody2D _rigidbody;
     private Player _player;
+    public GameObject damageTextPrefab;
+    public int TextDestroyTime = 1;
 
     private void Start()
     {
@@ -37,12 +39,20 @@ public class Enemy : MonoBehaviour, IPooledObject
     public void TakeDamage(int damageAmount)
     {
         CurrentHealth -= damageAmount;
+        if (damageTextPrefab != null)
+        {
+            ShowDamageText(damageAmount);
+        }
         if(CurrentHealth < 0)
         {
             this.gameObject.SetActive(false);
         }
     }
 
+    private void ShowDamageText(int damageAmount)
+    {
+        ObjectPooler.Instance.SpawnFromPool("damagetext", transform.position, Quaternion.identity, damageAmount);
+    }
     
     public void OnObjectSpawn(int Variable)
     {
