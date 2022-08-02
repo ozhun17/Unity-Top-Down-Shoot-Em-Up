@@ -39,9 +39,9 @@ public class Enemy : MonoBehaviour, IPooledObject
     public void TakeDamage(int damageAmount)
     {
         CurrentHealth -= damageAmount;
-        if (damageTextPrefab != null)
+        if (damageTextPrefab != null && CurrentHealth > 0)
         {
-            ShowDamageText(damageAmount);
+            ShowDamageText((int)CurrentHealth);
         }
         if(CurrentHealth < 0)
         {
@@ -49,9 +49,9 @@ public class Enemy : MonoBehaviour, IPooledObject
         }
     }
 
-    private void ShowDamageText(int damageAmount)
+    private void ShowDamageText(int numToShow)
     {
-        ObjectPooler.Instance.SpawnFromPool("damagetext", transform.position, Quaternion.identity, damageAmount);
+        ObjectPooler.Instance.SpawnFromPool("damagetext", transform.position, Quaternion.identity, numToShow);
     }
     
     public void OnObjectSpawn(int Variable)

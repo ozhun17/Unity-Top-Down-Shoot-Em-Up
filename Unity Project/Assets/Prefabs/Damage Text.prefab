@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7921552305970530304}
   - component: {fileID: 5290663748272606430}
   - component: {fileID: 3409289727970263312}
+  - component: {fileID: 2364871939045669805}
   m_Layer: 0
   m_Name: Damage Text
   m_TagString: Untagged
@@ -186,3 +187,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waitTime: 0.5
+  offset: {x: 0, y: 0.5, z: 0}
+--- !u!111 &2364871939045669805
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4558765345994770846}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 7fbcb880912dc39428af98ab7f981a98, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 7fbcb880912dc39428af98ab7f981a98, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
