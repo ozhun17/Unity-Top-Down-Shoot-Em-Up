@@ -82,7 +82,7 @@ public class Enemy : MonoBehaviour, IPooledObject
 
     private int CheckForPlayers(Vector2 Point)
     {
-        Collider2D hit = Physics2D.OverlapCircle(Point, skipRadius, playerLayer);
+        Collider2D hit = Physics2D.OverlapCircle(Point, skipRadius-2, playerLayer);
         if(hit != null)
         {
             return 1;

@@ -133,7 +133,9 @@ GameObject:
   m_Component:
   - component: {fileID: 279298854}
   - component: {fileID: 279298855}
-  m_Layer: 7
+  - component: {fileID: 279298857}
+  - component: {fileID: 279298856}
+  m_Layer: 0
   m_Name: 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,6 +171,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _joystick: {fileID: 1918232103}
   inputStyle: 1
+--- !u!114 &279298856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279298853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6921148384e5beb439b6e341d1ad4c5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!58 &279298857
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279298853}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4
 --- !u!1 &466684375
 GameObject:
   m_ObjectHideFlags: 0
@@ -1050,7 +1083,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1825714207}
   - component: {fileID: 1825714208}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1457,6 +1490,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7744894546961169609, guid: 6a9cc796b4efd794b8a4fde0f96938fa, type: 3}
+      propertyPath: skipRadius
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7744894546961169610, guid: 6a9cc796b4efd794b8a4fde0f96938fa, type: 3}
       propertyPath: m_Name
       value: Basic Enemy

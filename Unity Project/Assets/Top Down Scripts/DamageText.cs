@@ -18,11 +18,11 @@ public class DamageText : MonoBehaviour, IPooledObject
     {
         _tmp.text = var.ToString();
         transform.position += offset;
-        _coroutine = disableobject(waitTime);
+        _coroutine = Disableobject(waitTime);
         StartCoroutine(_coroutine);
     }
 
-    private IEnumerator disableobject(float WaitTime)
+    private IEnumerator Disableobject(float WaitTime)
     {
         yield return new WaitForSeconds(WaitTime);
         this.gameObject.SetActive(false);

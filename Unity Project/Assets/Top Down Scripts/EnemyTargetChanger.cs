@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class EnemyTargetChanger : MonoBehaviour
 {
-    private Enemy _enemy;
-    private void Awake()
-    {
-        _enemy = GetComponentInParent<Enemy>();
-    }
+    public LayerMask enemyLayer;
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.gameObject.TryGetComponent(out Enemy enemy))
         {
-
-            _enemy.PlayerTransform = collision.transform;
+            enemy.PlayerTransform = this.transform.parent;
+            Debug.Log("triggertrial");
         }
     }
 }
