@@ -27,7 +27,7 @@ A vampire survivors like shoot'em up game with various gun mechanics and Co-Op G
 
 ## 02.08.2022 Kanban Board
 
-![](https://raw.githubusercontent.com/ozhun17/Unity-Top-Down-Shoot-Em-Up/main/kanban%20board.png)
+![](https://github.com/ozhun17/Unity-Top-Down-Shoot-Em-Up/blob/main/kanban%20board.png?raw=true)
 
 
 - Implementations were added in order to ease into multiplayer gameplay. 
