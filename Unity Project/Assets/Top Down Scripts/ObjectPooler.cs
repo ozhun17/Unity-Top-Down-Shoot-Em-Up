@@ -40,7 +40,7 @@ public class ObjectPooler : MonoBehaviour
 
     }
 
-    public GameObject SpawnFromPool(string tag, Vector3 position, Quaternion rotation)
+    public GameObject SpawnFromPool(string tag, Vector3 position, Quaternion rotation, int variable)
     {
         if (!poolDictionary.ContainsKey(tag))
         {
@@ -56,7 +56,7 @@ public class ObjectPooler : MonoBehaviour
         IPooledObject pooledObj = objectToSpawn.GetComponent<IPooledObject>();
         if (pooledObj != null)
         {
-            pooledObj.OnObjectSpawn();
+            pooledObj.OnObjectSpawn(variable);
         }
 
         return objectToSpawn;

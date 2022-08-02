@@ -14,12 +14,18 @@ public class TopDownMove : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private Transform _transform;
     public int inputStyle;
+    private Player _player;
+
+    private void Awake()
+    {
+        _player = GetComponent<Player>();
+    }
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _transform = GetComponent<Transform>();
-        maxSpeed = Player.Instance.maxSpeed;
-        acceleration = Player.Instance.acceleration;
+        maxSpeed = _player.maxSpeed;
+        acceleration = _player.acceleration;
     }
 
     private void Update()

@@ -10,12 +10,9 @@ public class Player : MonoBehaviour
     public float acceleration = 15f;
     public float BulletDamage = 12f;
     public int Piercing = 2;
+    public int PlayerId = 0;
 
-    public static Player Instance;
-    private void Awake()
-    {
-        Instance = this;
-    }
+    
 
     void Start()
     {

@@ -7,9 +7,13 @@ public class EnemySpawner : MonoBehaviour
     private Transform PlayerTransform;
     private IEnumerator coroutine;
     public float waitTime = 2f;
+    private Player _player;
+    private int playerid;
     private void Awake()
     {
         PlayerTransform = GetComponent<Transform>();
+        _player = GetComponent<Player>();
+        playerid = _player.PlayerId;
     }
 
     private void Start()
@@ -23,7 +27,7 @@ public class EnemySpawner : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(waitTime);
-            ObjectPooler.Instance.SpawnFromPool("enemy", PlayerTransform.position, PlayerTransform.rotation);
+            ObjectPooler.Instance.SpawnFromPool("enemy", PlayerTransform.position, PlayerTransform.rotation, playerid);
         }
     }
 }

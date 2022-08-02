@@ -12,14 +12,11 @@ public class Enemy : MonoBehaviour, IPooledObject
     private Transform _transform;
     private Vector2 Direction;
     private Rigidbody2D _rigidbody;
+    private Player _player;
 
     private void Start()
     {
-        _rigidbody = GetComponent<Rigidbody2D>();
-        PlayerTransform = Player.Instance.GetComponent<Transform>();
-        _transform = GetComponent<Transform>();
-        CurrentHealth = MaxHealth;
-        OnObjectSpawn();
+        OnObjectSpawn(0);
 
     }
 
@@ -47,10 +44,11 @@ public class Enemy : MonoBehaviour, IPooledObject
     }
 
     
-    public void OnObjectSpawn()
+    public void OnObjectSpawn(int Variable)
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        PlayerTransform = Player.Instance.GetComponent<Transform>();
+        _player = PlayerManager.Instance.Players[Variable].PlayerGameObject.GetComponent<Player>();
+        PlayerTransform = _player.GetComponent<Transform>();
         _transform = GetComponent<Transform>();
         CurrentHealth = MaxHealth;
         _transform.position = new Vector2(PlayerTransform.position.x+5, PlayerTransform.position.y+5);

@@ -8,18 +8,20 @@ public class bullet : MonoBehaviour, IPooledObject
     private Rigidbody2D _rb;
     private float BulletDamage = 10f;
     private int Piercing = 1;
+    private Player _player;
     // Start is called before the first frame update
     private void Start()
     {
-        OnObjectSpawn();
+        OnObjectSpawn(0);
     }
 
-    public void OnObjectSpawn()
+    public void OnObjectSpawn(int Variable)
     {
         _rb = GetComponent<Rigidbody2D>();
         _rb.velocity = transform.right * bulletSpeed;
-        BulletDamage = Player.Instance.BulletDamage;
-        Piercing = Player.Instance.Piercing;
+        _player = PlayerManager.Instance.Players[Variable].PlayerGameObject.GetComponent<Player>();  //BulletDamage;
+        BulletDamage = _player.BulletDamage;
+        Piercing = _player.Piercing;
     }
 
 
