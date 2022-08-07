@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class bullet : MonoBehaviour, IPooledObject
 {
-    public float bulletSpeed;
+    private float bulletSpeed = 2;
     private Rigidbody2D _rb;
     private float BulletDamage = 10f;
     private int Piercing = 1;
@@ -22,6 +22,7 @@ public class bullet : MonoBehaviour, IPooledObject
         _rb.velocity = transform.right * bulletSpeed;
         _player = PlayerManager.Instance.Players[Variable].PlayerGameObject.GetComponent<Player>();  //BulletDamage;
         BulletDamage = _player.BulletDamage;
+        bulletSpeed = _player.BulletSpeed;
         Piercing = _player.Piercing;
     }
 

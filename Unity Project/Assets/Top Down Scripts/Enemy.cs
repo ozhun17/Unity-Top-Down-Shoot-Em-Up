@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour, IPooledObject
@@ -89,6 +88,8 @@ public class Enemy : MonoBehaviour, IPooledObject
         _transform.position = randomPoint;
     }
 
+    #region Knockback
+
     private void Knockback(float kbt)
     {
         knockback = KnockBackRoutine(kbt);
@@ -107,6 +108,7 @@ public class Enemy : MonoBehaviour, IPooledObject
         }
     }
 
+    #endregion
 
     private int CheckForPlayers(Vector2 Point)
     {
