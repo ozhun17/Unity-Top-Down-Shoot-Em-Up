@@ -8,8 +8,14 @@ public class LookAtMouse : MonoBehaviour
     public Joystick _joystick;
     private float angle;
     public int inputStyle; // 0 for joystick 1 for mouse
+    private SpriteRenderer GunSprite;
 
-    // Update is called once per frame
+
+    private void Awake()
+    {
+        GunSprite = GetComponentInChildren<SpriteRenderer>();
+    }
+
     void Update()
     {
         switch (inputStyle)
@@ -22,8 +28,13 @@ public class LookAtMouse : MonoBehaviour
                 var dir = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
                 angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
                 transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+                if(dir.x < 0) { GunSprite.flipY = true; }
+                else { GunSprite.flipY = false;}
                 break;
         }
         
+       
+
+
     }
 }
