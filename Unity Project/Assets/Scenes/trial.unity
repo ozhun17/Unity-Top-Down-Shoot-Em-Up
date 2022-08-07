@@ -466,7 +466,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7784091, y: 1}
+    m_SensorSize: {x: 1.3527205, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1060,6 +1060,9 @@ MonoBehaviour:
   BulletDamage: 12
   Piercing: 2
   PlayerId: 0
+  BulletSpread: 30
+  Projectiles: 2
+  KnockBackTime: 0.2
 --- !u!114 &1724720816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1098,7 +1101,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1825714206}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 279298854}
@@ -1178,6 +1181,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1006461047275975407, guid: cdfab6050d5f420428a6cef817329cc4, type: 3}
+      propertyPath: pools.Array.data[0].size
+      value: 360
+      objectReference: {fileID: 0}
     - target: {fileID: 3666054317296325393, guid: cdfab6050d5f420428a6cef817329cc4, type: 3}
       propertyPath: m_RootOrder
       value: 7

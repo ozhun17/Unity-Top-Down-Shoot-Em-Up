@@ -11,6 +11,9 @@ public class Player : MonoBehaviour
     public float BulletDamage = 12f;
     public int Piercing = 2;
     public int PlayerId = 0;
+    public float BulletSpread = 30;
+    public int Projectiles = 2;
+    public float KnockBackTime = 0.5f;
 
     
 

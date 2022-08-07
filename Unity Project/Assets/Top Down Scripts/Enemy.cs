@@ -18,7 +18,10 @@ public class Enemy : MonoBehaviour, IPooledObject
     private Vector2 randomPoint;
     public LayerMask playerLayer;
     private Vector2 skip;
+    private float KnockBackTime = 0.3f;
     public int skipRadius = 8;
+    private IEnumerator knockback;
+    private int knockbackchecker = 0;
 
     private void Start()
     {
@@ -43,7 +46,7 @@ public class Enemy : MonoBehaviour, IPooledObject
     public void TakeDamage(int damageAmount)
     {
         CurrentHealth -= damageAmount;
-        if (damageTextPrefab != null && CurrentHealth > 0)
+        if (damageTextPrefab != null && CurrentHealth >= 0)
         {
             ShowDamageText((int)CurrentHealth);
         }
@@ -51,6 +54,12 @@ public class Enemy : MonoBehaviour, IPooledObject
         {
             this.gameObject.SetActive(false);
         }
+        else
+        {
+            Knockback(KnockBackTime);
+        }
+        
+
     }
 
     private void ShowDamageText(int numToShow)
@@ -62,6 +71,7 @@ public class Enemy : MonoBehaviour, IPooledObject
     {
         _rigidbody = GetComponent<Rigidbody2D>();        
         _player = PlayerManager.Instance.Players[Variable].PlayerGameObject.GetComponent<Player>();
+        KnockBackTime = _player.KnockBackTime;
         PlayerTransform = _player.GetComponent<Transform>();
         _transform = GetComponent<Transform>();
         CurrentHealth = MaxHealth;
@@ -77,6 +87,24 @@ public class Enemy : MonoBehaviour, IPooledObject
             checker = CheckForPlayers(randomPoint);
         }
         _transform.position = randomPoint;
+    }
+
+    private void Knockback(float kbt)
+    {
+        knockback = KnockBackRoutine(kbt);
+        StartCoroutine(knockback);
+    }
+
+    private IEnumerator KnockBackRoutine(float kbt)
+    {
+        if(knockbackchecker == 0)
+        {
+            knockbackchecker = 1;
+            MoveSpeed = (-MoveSpeed);
+            yield return new WaitForSeconds(kbt);
+            MoveSpeed = (-MoveSpeed);
+            knockbackchecker = 0;
+        }
     }
 
 
