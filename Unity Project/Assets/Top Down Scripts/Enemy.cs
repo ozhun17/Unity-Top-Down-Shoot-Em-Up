@@ -47,7 +47,7 @@ public class Enemy : MonoBehaviour, IPooledObject
         CurrentHealth -= damageAmount;
         if (damageTextPrefab != null && CurrentHealth >= 0)
         {
-            ShowDamageText((int)CurrentHealth);
+            ShowDamageText(damageAmount);
         }
         if(CurrentHealth < 0)
         {
@@ -74,6 +74,7 @@ public class Enemy : MonoBehaviour, IPooledObject
         PlayerTransform = _player.GetComponent<Transform>();
         _transform = GetComponent<Transform>();
         CurrentHealth = MaxHealth;
+        MoveSpeed = Mathf.Abs(MoveSpeed);
         randomPoint = Random.insideUnitCircle.normalized;
         if (randomPoint == Vector2.zero) { randomPoint = Vector2.one; };
         randomPoint *= skipRadius;
@@ -93,6 +94,10 @@ public class Enemy : MonoBehaviour, IPooledObject
     private void Knockback(float kbt)
     {
         knockback = KnockBackRoutine(kbt);
+        if (knockbackchecker == 1)
+        {
+            StopCoroutine(knockback);
+        }
         StartCoroutine(knockback);
     }
 

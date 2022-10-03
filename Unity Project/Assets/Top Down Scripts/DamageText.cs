@@ -14,6 +14,11 @@ public class DamageText : MonoBehaviour, IPooledObject
     {
         _tmp = GetComponent<TMP_Text>();
     }
+
+    private void Update()
+    {
+        transform.position += offset / 50;
+    }
     public void OnObjectSpawn(int var)
     {
         _tmp.text = var.ToString();

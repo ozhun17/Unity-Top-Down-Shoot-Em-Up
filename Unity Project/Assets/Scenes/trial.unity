@@ -561,7 +561,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.3527205, y: 1}
+    m_SensorSize: {x: 1.841853, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1153,13 +1153,13 @@ MonoBehaviour:
   CurrentHealth: 0
   maxSpeed: 5
   acceleration: 15
-  BulletDamage: 12
-  Piercing: 2
-  BulletSpread: 30
-  Projectiles: 2
+  BulletDamage: 40
+  Piercing: 15
+  BulletSpread: 360
+  Projectiles: 60
   BulletSpeed: 7
   KnockBackTime: 0.2
-  EnemySpawnWaitTime: 2
+  EnemySpawnWaitTime: 0.01
 --- !u!114 &1724720816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1243,7 +1243,7 @@ SpriteRenderer:
   m_SortingLayerID: -1742431323
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1959adfdc5c338840858eec9307f0184, type: 3}
+  m_Sprite: {fileID: -1468778687981988818, guid: bd3d60a2f1bf0904cb5337c1641c8e3b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1279,7 +1279,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1006461047275975407, guid: cdfab6050d5f420428a6cef817329cc4, type: 3}
       propertyPath: pools.Array.data[0].size
-      value: 360
+      value: 1200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1006461047275975407, guid: cdfab6050d5f420428a6cef817329cc4, type: 3}
+      propertyPath: pools.Array.data[1].size
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1006461047275975407, guid: cdfab6050d5f420428a6cef817329cc4, type: 3}
+      propertyPath: pools.Array.data[2].size
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 3666054317296325393, guid: cdfab6050d5f420428a6cef817329cc4, type: 3}
       propertyPath: m_RootOrder
@@ -1593,10 +1601,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7744894546961169609, guid: 6a9cc796b4efd794b8a4fde0f96938fa, type: 3}
-      propertyPath: skipRadius
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 7744894546961169610, guid: 6a9cc796b4efd794b8a4fde0f96938fa, type: 3}
       propertyPath: m_Name
       value: Basic Enemy
